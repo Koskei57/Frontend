@@ -1,4 +1,5 @@
-import React ,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
+import NewBook from './NewBook';
 
 const Book = () => {
   
@@ -14,9 +15,13 @@ const [books, setBooks] = useState([]);
    
   }, []);
   
+function onAddBook(newBook) {  
+  setBooks([...books, newBook])
+}
+  
   return (
     <>
-      <div>
+      <div className='card'>
        { books.map((book) => (
                 <ol key = { book.id } >
                 <h1>Title: { book.title }</h1>
@@ -24,8 +29,9 @@ const [books, setBooks] = useState([]);
                  <p>Price: { book.price }</p>
                 </ol>
             ))}
-      
+        <NewBook onAddBook={ onAddBook} />
       </div>
+      
     </>
   )
 }

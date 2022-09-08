@@ -18,7 +18,7 @@ const BookReview = () => {
 ))  
   
   return (
-    <div>
+    <div className='card'>
      {showReview}
     </div>
   )
