@@ -1,14 +1,13 @@
 import React, {useState} from 'react'
 
-const NewBook = ({onAddBook}) => {
- const [formData, setFormData] = useState({
-    title: "", publisher: "", price: ""
-  });
-  
-  function handleChange(e) {
-    setFormData({ ...formData , [e.target.name]: e.target.value})
-  }
-  function handleSubmit(event) {
+const NewBook = ({ onAddBook}) => {
+   
+    const [formData, setFormData] = useState({ title: "", publisher: "", price: "" });
+    
+    function handleChange(e) {
+    setFormData({ ...formData , [e.target.name]: e.target.value})}
+    
+    function handleSubmit(event) {
     event.preventDefault();
     fetch("http://localhost:9292/book",{
       method: "POST",
@@ -22,15 +21,18 @@ const NewBook = ({onAddBook}) => {
         onAddBook(data)
         setFormData({...formData,title:"",publisher:"",price:""})
       })
-  }
+    }
+    
+  
   
   return (
     <div>
-    <form className="form" onSubmit={handleSubmit}>
-      <input onChange={handleChange} value={formData.title} name="title" placeholder="Title" />
-      <input onChange={handleChange} value={formData.publisher} name="publisher" placeholder="Publisher" />
-      <input onChange={handleChange} value={formData.price} name="price"  placeholder="Price" />
-    <button type='submit'>Submit</button>
+          <form className="form" onSubmit={handleSubmit}>
+              <input onChange={handleChange} value={formData.title} name="title" placeholder="Title" />
+              <input onChange={handleChange} value={formData.publisher}    name="publisher"placeholder="Publisher"/>
+              <input onChange={handleChange} value={formData.price} name="price" placeholder="Price" />
+              <button type='submit'>Submit</button>
+             
     </form>
     </div>
   )

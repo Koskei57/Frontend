@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import NewBook from './NewBook';
+import DeleteBook from './DeleteBook';
 
 const Book = () => {
   
@@ -14,11 +15,16 @@ const [books, setBooks] = useState([]);
       });
    
   }, []);
-  
-function onAddBook(newBook) {  
+  function onAddBook(newBook) {  
   setBooks([...books, newBook])
-}
+  }
   
+   function handleDelete(id) {
+    const newBooks = books.filter((book) => book.id !== id)
+    setBooks(newBooks)
+  }
+
+
   return (
     <>
       <div className='card'>
@@ -29,7 +35,8 @@ function onAddBook(newBook) {
                  <p>Price: { book.price }</p>
                 </ol>
             ))}
-        <NewBook onAddBook={ onAddBook} />
+        <NewBook onAddBook={onAddBook} />
+        <DeleteBook onDeleteBook={handleDelete} book={ books}/>
       </div>
       
     </>
