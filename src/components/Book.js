@@ -19,8 +19,8 @@ const [books, setBooks] = useState([]);
   setBooks([...books, newBook])
   }
   
-   function handleDelete(id) {
-    const newBooks = books.filter((book) => book.id !== id)
+   function handleDelete(deletedBook) {
+    const newBooks = books.filter((book) => book.id !== deletedBook.id )
     setBooks(newBooks)
   }
 
@@ -28,15 +28,12 @@ const [books, setBooks] = useState([]);
   return (
     <>
       <div className='card'>
-       { books.map((book) => (
-                <ol key = { book.id } >
-                <h1>Title: { book.title }</h1>
-                 <p>Publisher: { book.publisher }</p>
-                 <p>Price: { book.price }</p>
-                </ol>
-            ))}
+        <ul className="book">
+        {books.map((book) => (
+          <DeleteBook id={book.id} key={book.id} book={book}  onDeleteBook={handleDelete} />
+        ))}
+      </ul>
         <NewBook onAddBook={onAddBook} />
-        <DeleteBook onDeleteBook={handleDelete} book={ books}/>
       </div>
       
     </>
