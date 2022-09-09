@@ -26,12 +26,12 @@ const NewBook = ({ onAddBook}) => {
   
   
   return (
-    <div>
+    <div className=''>
           <form className="form" onSubmit={handleSubmit}>
               <input onChange={handleChange} value={formData.title} name="title" placeholder="Title" />
               <input onChange={handleChange} value={formData.publisher}    name="publisher"placeholder="Publisher"/>
               <input onChange={handleChange} value={formData.price} name="price" placeholder="Price" />
-              <button type='submit'>Submit</button>
+              <button className="btn" type='submit'>Submit</button>
              
     </form>
     </div>
