@@ -15,10 +15,14 @@ const DeleteBook = ({book, onDeleteBook }) => {
   return (
     <div>
       <li>
+        <div className="flex justify-center h-800 w-900 mt-12">
+        <div className="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-gray-300 shadow-lg">
         <span>{book.title}</span>
         <span>{book.publisher}</span>
         <span>{ book.price}</span>
-        <button onClick={handleDeleteBook} >Delete</button>
+        <button className='delete' onClick={handleDeleteBook} >Delete</button>
+      </div>
+      </div>
       </li>
     </div>
   )
