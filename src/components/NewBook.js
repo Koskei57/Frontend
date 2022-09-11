@@ -9,7 +9,7 @@ const NewBook = ({ onAddBook}) => {
     
     function handleSubmit(event) {
     event.preventDefault();
-    fetch("http://localhost:9292/book",{
+    fetch("https://books-app-backend.herokuapp.com/book",{
       method: "POST",
       headers: {
       "Content-Type":"application/json",

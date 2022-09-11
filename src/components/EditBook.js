@@ -7,7 +7,7 @@ const EditBook = ({ book, onEditBook }) => {
     function handleFormSubmit(e) {
     e.preventDefault();
 
-    fetch(`http://localhost:9292/book/${book.id}`, {
+    fetch(`https://books-app-backend.herokuapp.com/book/${book.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

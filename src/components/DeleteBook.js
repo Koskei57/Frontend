@@ -3,7 +3,7 @@ import React from 'react'
 const DeleteBook = ({book, onDeleteBook }) => {
    
     function handleDeleteBook() {
-    fetch(`http://localhost:9292/book/${book.id}`, {
+    fetch(`https://books-app-backend.herokuapp.com/book/${book.id}`, {
     method:"DELETE",
     })
       .then(r => r.json())
@@ -16,10 +16,10 @@ const DeleteBook = ({book, onDeleteBook }) => {
     <div>
       <li>
         <div className="flex justify-center h-800 w-900 mt-12">
-        <div className="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-gray-300 shadow-lg">
-        <span>{book.title}</span>
-        <span>{book.publisher}</span>
-        <span>{ book.price}</span>
+        <div className="span">
+        <p>Title: {book.title}</p>
+        <p>Publisher Name: {book.publisher}</p>
+        <p>Price: Ksh{ book.price}</p>
         <button className='delete' onClick={handleDeleteBook} >Delete</button>
       </div>
       </div>

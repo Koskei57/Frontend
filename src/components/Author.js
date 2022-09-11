@@ -1,11 +1,12 @@
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
+import '../App.css';
 
 const Author = () => {
   
   const[authors,setAuthors] = useState([])
   
    useEffect(() => {
-      fetch("http://localhost:9292/author")
+      fetch("https://books-app-backend.herokuapp.com/author")
       .then((response) => response.json())
       .then((data) =>{
       setAuthors(data)
@@ -13,7 +14,7 @@ const Author = () => {
    }, []);
   
   return (
-    <div className='card'>
+    <div className='author'>
       { authors.map((author) => (
                 <ol key = { author.id } >
                 <p>Name: { author.name }</p>

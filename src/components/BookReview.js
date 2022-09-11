@@ -1,10 +1,10 @@
 import React, {useState,useEffect} from 'react'
-
+import '../App.css';
 const BookReview = () => {
   const[reviews, setReview] = useState([])
   
    useEffect(() => {
-      fetch("http://localhost:9292/reviews")
+      fetch("https://books-app-backend.herokuapp.com/reviews")
       .then((response) => response.json())
       .then((data) =>{
         setReview(data)
@@ -18,7 +18,7 @@ const BookReview = () => {
 ))  
   
   return (
-    <div className='card'>
+    <div className='author'>
      {showReview}
     </div>
   )

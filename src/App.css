@@ -10,6 +10,19 @@ body {
   color:aliceblue;
 }
 
+.author{
+border-radius: 5px;
+box-shadow: 0px 5px 20px rgb(75, 71, 71);
+margin: 5px;
+flex-direction: row;
+grid-gap: 40px; 
+grid-template: auto / repeat(auto-fit, minmax(400px, 1fr));
+justify-content: space-evenly;
+background: rgb(82, 80, 80);
+align-items: column;
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
