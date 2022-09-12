@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import "../css/Newbook.css"
 
 const NewBook = ({ onAddBook}) => {
    
@@ -26,12 +27,12 @@ const NewBook = ({ onAddBook}) => {
   
   
   return (
-    <div className=''>
+    <div className='newbook'>
           <form className="form" onSubmit={handleSubmit}>
-              <input onChange={handleChange} value={formData.title} name="title" placeholder="Title" />
-              <input onChange={handleChange} value={formData.publisher}    name="publisher"placeholder="Publisher"/>
-              <input onChange={handleChange} value={formData.price} name="price" placeholder="Price" />
-              <button className="btn" type='submit'>Submit</button>
+              <input type="text" onChange={handleChange} value={formData.title} name="title" placeholder="Title" />
+              <input type="text" onChange={handleChange} value={formData.publisher}    name="publisher"placeholder="Publisher"/>
+              <input type="text" onChange={handleChange} value={formData.price} name="price" placeholder="Price" />
+              <button  className="btn" type="submit">Submit</button>
              
     </form>
     </div>

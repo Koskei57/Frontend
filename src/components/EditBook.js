@@ -22,7 +22,7 @@ const EditBook = ({ book, onEditBook }) => {
   return (
     <div>
       <form className="form" onSubmit={handleFormSubmit}>
-              <button className="btn" type='submit'>Edit</button>  
+              {/* <button className="btn" type='submit'>Edit</button>   */}
     </form>
     </div>
   )
