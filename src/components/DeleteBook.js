@@ -14,8 +14,8 @@ const DeleteBook = ({book, onDeleteBook }) => {
     
   return (
     <div>
-      <li>
-        <div className="flex justify-center h-800 w-900 mt-12">
+      
+        <div className="flex content-center justify-center mt-5">
         <div className="span">
         <p>Title: {book.title}</p>
         <p>Publisher Name: {book.publisher}</p>
@@ -23,7 +23,6 @@ const DeleteBook = ({book, onDeleteBook }) => {
         <button className='delete' onClick={handleDeleteBook} >Delete</button>
       </div>
       </div>
-      </li>
     </div>
   )
 }

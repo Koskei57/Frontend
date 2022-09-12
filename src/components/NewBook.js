@@ -28,13 +28,13 @@ const NewBook = ({ onAddBook}) => {
   
   return (
     <div className='newbook'>
-          <form className="form" onSubmit={handleSubmit}>
-              <input type="text" onChange={handleChange} value={formData.title} name="title" placeholder="Title" />
-              <input type="text" onChange={handleChange} value={formData.publisher}    name="publisher"placeholder="Publisher"/>
-              <input type="text" onChange={handleChange} value={formData.price} name="price" placeholder="Price" />
-              <button  className="btn" type="submit">Submit</button>
-             
-    </form>
+      <form className="form" onSubmit={handleSubmit}>
+        <input type="text" onChange={handleChange} value={formData.title} name="title" placeholder="Title" />
+        <input type="text" onChange={handleChange} value={formData.publisher} name="publisher" placeholder="Publisher" />
+        <input type="text" onChange={handleChange} value={formData.price} name="price" placeholder="Price" />
+        <button className="btn" type="submit">Submit</button>
+
+      </form>
     </div>
   )
 }
